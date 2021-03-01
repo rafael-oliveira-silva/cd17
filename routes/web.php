@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Site\IndexController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\RegisterController;
+use App\Http\Controllers\Admin\Auth\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+/*     FONT-END    */ 
+
+Route::get('/', [IndexController::class, 'index']);
+
+
+/*     BACK-END    */ 
+
+Route::prefix('/admin_panel')->group(function(){
+    Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('login', [LoginController::class, 'index'])->name('login');
+    Route::get('register', [RegisterController::class, 'index'])->name('register');
+    Route::post('register', [RegisterController::class, 'create']);
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
