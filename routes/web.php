@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\VerificationController;
+use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,21 @@ Route::get('/', [IndexController::class, 'index']);
 /*     BACK-END    */ 
 
 Route::prefix('/admin_panel')->group(function(){
+
+    // PAINEL ADMINISTRATIVO
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+
+    // TELA DE LOGIN
     Route::get('login', [LoginController::class, 'index'])->name('login');
-    // Route::get('register', [RegisterController::class, 'index'])->name('register');
-    // Route::post('register', [RegisterController::class, 'create']);
+    Route::post('login', [LoginController::class, 'auth']);
+
+    // TELA DE REGISTRO
+    Route::get('register', [RegisterController::class, 'index'])->name('register');
+    Route::post('register', [RegisterController::class, 'register']);
+
+    // LOGOUT
+
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+    //Route::get('password_reset', [ForgotPasswordController::class, 'index'])->name('password_reset');
 });

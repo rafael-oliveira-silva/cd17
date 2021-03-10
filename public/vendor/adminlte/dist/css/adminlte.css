@@ -58,6 +58,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+aside a {
+  text-decoration: none;
+}
+
+aside a:hover span {
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -20316,6 +20324,7 @@ html.maximized-card {
 .login-logo a,
 .register-logo a {
   color: #495057;
+  text-decoration: none;
 }
 
 .login-page,

@@ -49,7 +49,7 @@ return [
     'logo_img' => 'vendor/adminlte/dist/img/cd.jpeg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
-    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img_xl_class' => 'brand-image-xs text-decoration-none',
     'logo_img_alt' => 'CLÃ D17STINO',
 
     /*
@@ -65,7 +65,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -101,12 +101,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'bg-gradient-dark',
     'classes_auth_header' => '',
-    'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_body' => 'bg-gradient-dark',
+    'classes_auth_footer' => 'text-center',
+    'classes_auth_icon' => 'text-light',
+    'classes_auth_btn' => 'btn-flat btn-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -187,12 +187,12 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'dashboard',
-    'logout_url' => 'logout',
-    'login_url' => 'login',
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
-    'password_email_url' => 'password/email',
+    'dashboard_url' => 'admin_panel',
+    'logout_url' => 'admin_panel/logout',
+    'login_url' => 'admin_panel/login',
+    'register_url' => 'admin_panel/register',
+    'password_reset_url' => 'admin_panel/password/reset',
+    'password_email_url' => 'admin_panel/password/email',
     'profile_url' => false,
 
     /*
@@ -229,19 +229,40 @@ return [
             'search' => true,
             'topnav' => true,
         ],
+
+
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Dashboard',
+            'url'  => 'admin_panel',
+            'icon' => 'fas fa-chart-line',
         ],
+        
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Gerenciar Membros',
+            'url'  => 'admin_panel/members_management',
+            'icon' => 'fas fa-users-cog',
         ],
+
+        [
+            'text' => 'Gerenciar Guild Wars',
+            'url'  => 'admin_panel/gvg_management',
+            'icon' => 'fab fa-jedi-order',
+        ],
+
+        [
+            'text' => 'Gerenciar Siege',
+            'url'  => 'admin_panel/siege_management',
+            'icon' => 'fas fa-bomb',
+        ],
+
+        [
+            'text' => 'Gerenciar Labirinto',
+            'url'  => 'admin_panel/lab_management',
+            'icon' => 'fas fa-ghost',
+        ],
+
         ['header' => 'account_settings'],
+
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
@@ -252,59 +273,11 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Logout',
+            'url'  => 'admin_panel/logout',
+            'icon' => 'fas fa-sign-out-alt',
         ],
     ],
 
