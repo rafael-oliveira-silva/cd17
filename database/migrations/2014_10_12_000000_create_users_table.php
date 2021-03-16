@@ -21,6 +21,17 @@ class CreateUsersTable extends Migration
             $table->string('whatsapp');
             $table->string('nickname');
             $table->integer('level');
+            $table->string('beasts');
+            $table->string('giant');
+            $table->string('dragon');
+            $table->string('necro');
+            $table->string('iron');
+            $table->string('crypt');
+            $table->integer('toan');
+            $table->integer('toah');
+            $table->string('arena');
+            $table->string('rta');
+            $table->string('special_league');
             $table->TinyInteger('admin')->default('0');
             $table->string('password');
             $table->rememberToken();

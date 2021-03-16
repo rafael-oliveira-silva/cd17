@@ -239,7 +239,7 @@ return [
         
         [
             'text' => 'Gerenciar Membros',
-            'url'  => 'admin_panel/members_management',
+            'url'  => 'admin_panel/members',
             'icon' => 'fas fa-users-cog',
         ],
 

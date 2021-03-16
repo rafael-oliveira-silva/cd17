@@ -56,8 +56,21 @@ class RegisterController extends Controller
             'password_confirmation',
             'whatsapp',
             'nickname',
-            'level'
+            'level',
+            'beasts', 
+            'giant', 
+            'dragon', 
+            'necro', 
+            'iron', 
+            'crypt', 
+            'toan', 
+            'toah', 
+            'arena', 
+            'rta', 
+            'special_league',
         ]);
+
+        
 
         $validator = $this->validator($data);
 
@@ -89,6 +102,17 @@ class RegisterController extends Controller
             'whatsapp' => ['required'],
             'nickname' => ['required', 'string', 'max:20'],
             'level' => ['required'],
+            'beasts' => ['required', 'string'],
+            'giant' => ['required', 'string'],
+            'dragon' => ['required', 'string'],
+            'necro' => ['required', 'string'],
+            'iron' => ['required', 'string'],
+            'crypt' => ['required', 'string'],
+            'toan' => ['required'], 
+            'toah' => ['required'], 
+            'arena' => ['required', 'string'],
+            'rta' => ['required', 'string'],
+            'special_league' => ['required', 'string'],
         ]);
     }
 
@@ -106,7 +130,18 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'whatsapp' => $data['whatsapp'],
             'nickname' => $data['nickname'],
-            'level' => $data['level']
+            'level' => $data['level'],
+            'beasts' => $data['beasts'],
+            'giant' => $data['giant'],
+            'dragon' => $data['dragon'],
+            'necro' => $data['necro'],
+            'iron' => $data['iron'],
+            'crypt' => $data['crypt'],
+            'toan' => $data['toan'],
+            'toah' => $data['toah'],
+            'arena' => $data['arena'],
+            'rta' => $data['rta'],
+            'special_league' => $data['special_league'],
         ]);
     }
 }

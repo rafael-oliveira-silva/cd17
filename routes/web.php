@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\VerificationController;
 use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
+use App\Http\Controllers\Admin\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::prefix('/admin_panel')->group(function(){
     // LOGOUT
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+    // CRUD USUÁRIOS
+
+    Route::resource('members', 'Admin\MemberController');
 
     //Route::get('password_reset', [ForgotPasswordController::class, 'index'])->name('password_reset');
 });
